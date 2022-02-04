@@ -1,0 +1,222 @@
+<!-- <div class="row mt-5">
+  <div class="col-md-6 mx-auto">
+      <div class="card">
+          <div class="card-body">
+              <span class="text-primary">
+                  <h2 class="card-title"><i class="fa fa-lock" aria-hidden="true"> Login Gestion de tournoi </i> </h2>
+              </span>
+
+
+
+    <form [formGroup]="loginForm"  (ngSubmit)=" login()">
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            formControlName="email"
+            type="text"
+            [ngClass]="{
+              'is-valid': loginForm.get('email')?.valid,
+              'is-invalid': loginForm.get('email')?.invalid  && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
+            }"
+            class="form-control"
+            id="email"
+          >
+
+          <div
+            *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('password')?.dirty)"
+            Class="invalid-feedback"
+          >
+            <div *ngIf="loginForm.get('email')?.getError('required')">Email is Required !</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            [ngClass]="{
+              'is-valid': loginForm.get('password')?.valid,
+              'is-invalid': loginForm.get('password')?.invalid  && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)
+            }"
+            class="form-control"
+            id="password"
+          >
+
+          <div
+            *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+            Class="invalid-feedback"
+          >
+            <div *ngIf="loginForm.get('password')?.getError('required')">Password is Required !</div>
+            <div *ngIf="loginForm.get('password')?.getError('minlength')">Password was to be 8 Caracters !</div>
+          </div>
+        </div>
+        <br>
+<div class="row">
+<div class="col-md-6 ">
+  <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block">Sign In</button>
+  <button  class="btn btn-info btn-block"> <a class="" routerLink="/regestre" >Sign up</a></button>
+</div>
+
+
+</div>
+
+        <br>
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary " (click)="signInWithGoogle()"> <i
+                    class="fa fa-google-plus-circle" aria-hidden="true"></i> </button>
+
+
+        </div>
+        <br>
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-info " > <i
+                  class="fa  fa-facebook" aria-hidden="true"></i> </button>
+
+
+      </div>
+      <br>
+      <div class="d-grid gap-2">
+        <button type="button" class  = " btn btn-info"  id = "mohssin"> <i
+                class="fa  fa-linkedin" aria-hidden="true"></i> </button>
+
+
+    </div>
+    <br>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-info " > <i
+              class="fa  fa-twitter" aria-hidden="true"></i> </button>
+
+
+  </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+</div> -->
+<!-- ----------------------------------------------------------------------- -->
+<div class="container">
+  <div class="card">
+      <div class="form">
+          <div class="left-side">
+              <div class="sign-up s_form">
+                  <div class="main active">
+                      <div class="heading">
+                          <h2>Gestion de Tournoi</h2>
+                      </div>
+
+                      <div class="social"> <span><i     class="fa fa-google"></i></span> <span><i class="fa fa-facebook"></i></span> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-linkedin"></i></span> </div>
+
+
+                      <form [formGroup]="loginForm"  (ngSubmit)=" login()">
+ <div class="or">or use your e-mail for registration :</div>
+                      <div class="input-text">  <input
+                        formControlName="email"
+                        type="text"
+                        [ngClass]="{
+                          'is-valid': loginForm.get('email')?.valid,
+                          'is-invalid': loginForm.get('email')?.invalid  && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)
+                        }"
+                        class="form-control"
+                        id="email"
+                      >
+                      <div
+                      *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('password')?.dirty)"
+                      Class="invalid-feedback"
+                    >
+                      <div *ngIf="loginForm.get('email')?.getError('required')">Email is Required !</div>
+                    </div>
+
+
+
+                    </div>
+                      <div class="input-text">   <input
+                        formControlName="password"
+                        type="password"
+                        [ngClass]="{
+                          'is-valid': loginForm.get('password')?.valid,
+                          'is-invalid': loginForm.get('password')?.invalid  && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)
+                        }"
+                        class="form-control"
+                        id="password"
+                      >
+
+                      <div
+                        *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+                        Class="invalid-feedback"
+                      >
+                        <div *ngIf="loginForm.get('password')?.getError('required')">Password is Required !</div>
+                        <div *ngIf="loginForm.get('password')?.getError('minlength')">Password was to be 8 Caracters !</div>
+                      </div> </div>
+
+                      <div class="buttons first"> <button  [disabled]="loginForm.invalid" class="sign_up_here">Sign in</button>  </div>
+
+                  </form>
+                  <div class="buttons first"><button  (click)  = " goToCompte()"  class="btn btn-primary btn-block"  >
+                    <i class="fa fa-user"></i> Sign up<a class="" routerLink="/regestre" ></a></button></div>
+
+                </div>
+                  <!-- <div class="main">
+                      <div class="heading">
+                          <h2>Create Account</h2>
+                      </div>
+                      <div class="social"> <span><i class="fa fa-google"></i></span> <span><i class="fa fa-facebook"></i></span> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-dribbble"></i></span> </div>
+                      <div class="or">or use your e-mail for registration :</div>
+                      <div class="input-text"> <input type="text" placeholder="Enter your E-mail" require> </div>
+                      <div class="input-text"> <input type="password" placeholder="Enter your password" id="password-input" require> <i class="fa fa-eye-slash passcode"></i> </div>
+                      <!-- <div class="input-text"> <input type="password" placeholder="Confirm password" id="password-input1" require> <i class="fa fa-eye-slash passcode1"></i> </div> -->
+                      <!-- <div class="terms"> <span><i class="fa fa-check d-none"></i></span>
+                          <p>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+                      </div>
+                      <div class="buttons"> <button class="submit_here">Submit</button> </div> -->
+                 <!-- </div> -->
+                  <!-- <div class="main">
+                      <div class="heading">
+                          <h2>Congratulations</h2>
+                      </div>
+                      <div class="social"> <span><i class="fa fa-google"></i></span> <span><i class="fa fa-facebook"></i></span> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-dribbble"></i></span> </div> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
+                      <div class="final-submit">
+                          <p>Thanks Mr./Mrs. <span id="shown-name"></span> for signing in with us we will contact you soon</p>
+                      </div>
+                  </div> -->
+              </div>
+              <!-- <div class="sign-in s_form d-none">
+                  <div class="main_login active">
+                      <div class="heading">
+                          <h2>Login Now</h2>
+                      </div>
+                      <div class="social"> <span><i class="fa fa-google"></i></span> <span><i class="fa fa-facebook"></i></span> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-dribbble"></i></span> </div>
+                      <div class="or">or use your e-mail for registration :</div>
+                      <div class="input-text"> <input type="text" placeholder="Enter your E-mail" require> </div>
+                      <div class="input-text"> <input type="password" placeholder="Enter your password" id="password-input-login" require> <i class="fa fa-eye-slash passcode1"></i> </div>
+                      <div class="terms"> <span><i class="fa fa-check d-none"></i></span>
+                          <p>Remember password</p>
+                      </div>
+                      <div class="buttons"> <button class="signin_submit">Sign in</button> <button class="sign_up_back_here">Sign up</button> </div>
+                  </div>
+                  <div class="main_login">
+                      <div class="heading">
+                          <h2>Congratulations</h2>
+                      </div>
+                      <div class="social"> <span><i class="fa fa-google"></i></span> <span><i class="fa fa-facebook"></i></span> <span><i class="fa fa-twitter"></i></span> <span><i class="fa fa-dribbble"></i></span> </div> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /> </svg>
+                      <div class="final-submit">
+                          <p>Thanks Mr./Mrs. <span id="shown-name"></span> for signing in with us we will contact you soon</p>
+                      </div>
+                  </div>
+              </div> -->
+          </div>
+          <div class="right-side">
+
+              <div class="cover_image"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPKqKfK1W1azsDv9TvFo_Anmh4XTxx4aKmLQ&usqp=CAU"> </div>
+              <div class="cover_image"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkVbbAeGZFJDaxNy8OfbF1NyLpKS0MHBzvQ&usqp=CAU"> </div>
+          </div>
+      </div>
+  </div>
+</div>

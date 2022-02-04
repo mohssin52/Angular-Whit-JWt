@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top  ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/arbitre" *ngIf ="CurrentUser">Tournoi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" routerLinkActive="active" routerLink="/arbitre" *ngIf ="CurrentUser">Home
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/arbitre/add" *ngIf ="CurrentUser">new</a>
+          </li>
+
+        </ul>
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item ml-auto">
+            <a class="nav-link"  routerLinkActive="active" routerLink="/login" *ngIf ="!CurrentUser">login</a>
+          </li>
+
+          <li class="nav-item">
+            <button (click)="  logOut()" routerLinkActive="active" class="nav-link btn-logout" *ngIf ="CurrentUser">Logout</button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="/changePass" *ngIf ="CurrentUser">changerPassword</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>

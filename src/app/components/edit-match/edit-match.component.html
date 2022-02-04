@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+
+
+      <a routerLink="/arbitre" ><i class="fa fa-row-left" aria-hidden="true"></i></a>
+
+      <a href=""> <i class="fa fa-arrow-circle-left" aria-hidden="true"> back to dashboard</i></a>
+
+
+   <div class="card">
+    <img src="https://i.pinimg.com/736x/b4/55/1e/b4551e42165e8c45a223dfc5540326fb.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+           <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i> update Match</h4>
+     <form  #v = "ngForm" (ngSubmit) = "onsubmit()">
+           <div class="form-group">
+            <label for="nom"></label>
+            <input type="text"
+             name="nom"
+             id="nom"
+             class="form-control"
+              placeholder="date"
+              required
+              minlength="3"
+              [(ngModel)] ="match.date"
+              #clientFirstname ="ngModel"
+              [ngClass] ="{'is-invalid':clientFirstname.errors && clientFirstname.touched}"
+              >
+              <div [hidden] ="!clientFirstname.errors?.required " class ="invalid-feedback">
+                   ce champ est obligatoir
+              </div>
+              <div [hidden] ="!clientFirstname.errors?.minlength " class ="invalid-feedback">
+                  ce champ doit avoir au moin 3 caracters
+             </div>
+
+          </div>
+          <div class="form-group">
+              <label for="nationalite"></label>
+              <input type="text"
+               name="nationalite"
+               id="nationalite"
+               class="form-control"
+                placeholder="heur"
+                required
+                minlength="3"
+                [(ngModel)] ="match.heur"
+                #clientlastname ="ngModel"
+                [ngClass] ="{'is-invalid':clientlastname.errors && clientlastname.touched}"
+                >
+                <div [hidden] ="!clientlastname.errors?.required " class ="invalid-feedback">
+                     ce champ est obligatoir
+                </div>
+                <div [hidden] ="!clientlastname.errors?.minlength " class ="invalid-feedback">
+                    ce champ doit avoir au moin 3 caracters
+               </div>
+
+            </div>
+
+
+
+
+
+       <button class="btn btn-primary btn-block" type ="submit" [disabled] ="!v.valid" >valider</button>
+
+          </form>
+       </div>
+   </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+<br>
+

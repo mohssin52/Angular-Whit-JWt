@@ -1,0 +1,75 @@
+
+
+
+<div class="container">
+
+
+  <div class="row my-5">
+
+    <div class="col-md-6">
+
+
+
+
+
+      <a routerLink="/arbitre/add" class="btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> new arbitre </a>
+
+
+
+
+
+
+
+    <input (keyup)="Search()" [(ngModel)]="name" type="text" class="form-control" placeholder="Search..." >
+
+  <br>
+
+<div class="card text-white bg-info">
+  <img src="https://www.fr.clipproject.info/images/joomgallery/details/football_23/football_dessins_gratuits_clipart_-_arbitre_image_gratuite_20160412_1454342800.png" class="card-img-top" alt="...">
+  <div class="card-body">
+      <!-- <input (keyup)="searchClients()" [(ngModel)]="search" type="text" class="form-control" placeholder="Search..." > -->
+
+      <h4  class="card-title">Liste des arbitres </h4>
+       <br>
+      <table class="table table-danger table-striped ">
+   <thead >
+       <tr>
+           <th>Nom</th>
+           <th>Nationalite</th>
+           <th></th>
+
+       </tr>
+       </thead>
+       <tbody>
+
+           <tr *ngFor = " let arbitre of arbitres " >
+
+
+               <td>{{arbitre.nom}}</td>
+               <td>{{arbitre.nationalite}}</td>
+                <td id="moh">
+                  <!-- <a routerLink="/arbitre/{{arbitre.arbitreId}}" class="btn btn-info " ><i class="fa fa-info-circle" aria-hidden="true"></i></a> -->
+                  <a routerLink="/arbitre/edit/{{arbitre.arbitreId}}" class="btn btn-warning "><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <div class="btn btn-danger"  (click) = " deleteArbitre(arbitre.arbitreId!)"><i class="fa fa-trash" aria-hidden="true"></i></div>
+
+                </td>
+           </tr>
+
+
+       </tbody>
+
+</table>
+
+</div>
+</div>
+
+
+
+</div>
+<div class="col-md-6">
+
+<app-list-match></app-list-match>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,57 @@
+
+<!-- ---------------------------------------
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+
+
+
+
+    </div>
+  </div>
+</div> -->
+
+      <a routerLink="/match/add" class="btn btn-success"> <i class="fa fa-plus" aria-hidden="true"></i> new match </a>
+
+
+    <input (keyup)="Search()" [(ngModel)]="name" type="text" class="form-control" placeholder="Search..." >
+
+  <br>
+
+
+<div class="card text-white bg-info">
+  <img src="https://i.pinimg.com/736x/b4/55/1e/b4551e42165e8c45a223dfc5540326fb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+      <!-- <input (keyup)="searchClients()" [(ngModel)]="search" type="text" class="form-control" placeholder="Search..." > -->
+
+      <h4  class="card-title">Liste des matchs </h4>
+       <br>
+      <table class="table table-danger table-striped ">
+   <thead >
+       <tr>
+           <th>Date</th>
+           <th>heur</th>
+           <th></th>
+
+       </tr>
+       </thead>
+       <tbody>
+
+           <tr *ngFor = " let match of matchs " >
+
+
+               <td>{{match.date}}</td>
+               <td>{{match.heur}}</td>
+                <td id="moh">
+                  <!-- <a routerLink="/arbitre/{{arbitre.arbitreId}}" class="btn btn-info " ><i class="fa fa-info-circle" aria-hidden="true"></i></a> -->
+                  <!-- <a routerLink="/arbitre/edit/{{arbitre.arbitreId}}" class="btn btn-warning "><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
+                  <div class="btn btn-danger"  (click) = " deleteMatch(match.matchId!)"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                  <a routerLink="/match/edit/{{match.matchId}}" class="btn btn-warning "><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                </td>
+           </tr>
+
+
+       </tbody>
+
+</table>
+
